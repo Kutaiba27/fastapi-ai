@@ -6,7 +6,7 @@ from pydantic import BaseModel, EmailStr
 from PIL import Image
 
 from .configurations.env_config import Settings
-from .routers import uploadfileRouter, userRouter
+from .routers import reseve_image, user_router
 from functools import lru_cache
 
 app = FastAPI()
@@ -39,5 +39,5 @@ def upload_file(images: ImageUpload):
     }
 
 
-app.include_router(userRouter.router)
-app.include_router(uploadfileRouter.router)
+app.include_router(user_router.router)
+app.include_router(reseve_image.router)
